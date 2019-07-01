@@ -1,0 +1,72 @@
+﻿/*Admin panel*/
+
+#wrapper #content-wrapper{
+    padding-top: 0!important;
+}
+
+.cover-photo {
+    height: 230px;
+    object-fit: cover;
+}
+
+.change-photo{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    background-color: rgba(255,255,255,0.6);
+    font-size: 23px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.cover-uploader{
+    visibility: hidden;
+}
+
+/* Error filds */
+
+.field-validation-error{
+    color:red;
+}
+
+.input-validation-error{
+    border: 2px solid red!important;
+}
+
+/* Table */
+
+.table-photo{
+    height: 80px;
+    width: 100px;
+    object-fit: cover;
+}
+
+/* Icon radiobuttons */
+
+.custom-radio{
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+.radio-icon {
+    color: rgb(0, 60, 156);
+    font-size: 25px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.custom-radio:checked + label > span {
+    color: black;
+    border-bottom: 2px solid blue;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.disabled {
+    color: rgb(217, 217, 217) !important;
+    background-color: rgba(0,0,0,0) !important;
+    border: none !important;
+}

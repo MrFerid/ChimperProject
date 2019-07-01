@@ -1,0 +1,117 @@
+﻿@model Chimper.Areas.ViewModel.BlogViewModel
+<div class="container-fluid">
+
+    <!-- Cover photo-->
+    <div class="row">
+        <div class="col-lg-12">
+            <img src="~/Content/SiteImages/@Model.Cover" class="cover-photo w-100" />
+            <input type="file" data-path="@Url.Content("~/Content/SiteImages/")" data-url="@Url.Action("Photo","AdminBlog")" name="coverPhoto" class="cover-uploader" />
+            <i class="far fa-images change-photo"></i>
+            <h6 class="position-absolute text-primary bg-white p-1" style="top:20px;"> Blog cover </h6>
+        </div>
+    </div>
+
+    <!-- Form -->
+
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 offset-0">
+
+            @using (Html.BeginForm(Model.Action, "AdminBlog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Blog.UserName)
+                    @Html.TextBoxFor(m => m.Blog.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Blog.UserName)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Blog.UserSurname)
+                    @Html.TextBoxFor(m => m.Blog.UserSurname, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Blog.UserSurname)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Blog.Header)
+                    @Html.TextBoxFor(m => m.Blog.Header, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Blog.Header)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Blog.Text)
+                    @Html.TextBoxFor(m => m.Blog.Text, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Blog.Text)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Blog.Photo)<br />
+                    <input type="file" name="file" />
+                </div>
+                
+                @Html.HiddenFor(m => m.Blog.id)
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Yadda saxla" />
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- DataTables -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Userin adi</th>
+                            <th>Userin soyadi</th>
+                            <th>Basliq</th>
+                            <th>Meqale</th>
+                            <th>Shekil</th>
+                            <th>Paylashim tarixi</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Userin adi</th>
+                            <th>Userin soyadi</th>
+                            <th>Basliq</th>
+                            <th>Meqale</th>
+                            <th>Shekil</th>
+                            <th>Paylashim tarixi</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+                        @foreach (var item in Model.Blogs)
+                        {
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td>@item.UserSurname</td>
+                            <td>@item.Header</td>
+                            <td>@item.Text</td>
+                            <td><img src="~/Content/SiteImages/@item.Photo" class="table-photo" /></td>
+                            <td>@item.ShareDate</td>
+                            <td> @Html.ActionLink("Redakte et", "Edit", "AdminBlog", new { id = item.id }, new { @class = "btn btn-warning" }) </td>
+                            <td> <button data-id="@item.id" data-url="@Url.Action("Delete","AdminBlog")" class="btn btn-danger btn-remove"> Sil </button> </td>
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

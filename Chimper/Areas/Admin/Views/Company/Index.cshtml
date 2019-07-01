@@ -1,0 +1,85 @@
+﻿@model Chimper.Areas.ViewModel.CompanyViewModel
+<div class="container-fluid">
+
+    <!-- Cover photo-->
+    <div class="row">
+        <div class="col-lg-12">
+            <img src="~/Content/SiteImages/@Model.Cover" class="cover-photo w-100" />
+            <input type="file" data-path="@Url.Content("~/Content/SiteImages/")" data-url="@Url.Action("Photo","Company")" name="coverPhoto" class="cover-uploader" />
+            <i class="far fa-images change-photo"></i>
+            <h6 class="position-absolute text-primary bg-white p-1" style="top:20px;"> Contact cover </h6>
+        </div>
+    </div>
+
+    <!-- Form -->
+
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12 offset-0">
+
+            @using (Html.BeginForm(Model.Action, "Company", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Name)
+                    @Html.TextBoxFor(m => m.Company.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Name)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Email)
+                    @Html.TextBoxFor(m => m.Company.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Email)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Phone)
+                    @Html.TextBoxFor(m => m.Company.Phone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Phone)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Address)
+                    @Html.TextBoxFor(m => m.Company.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Address)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.About)
+                    @Html.TextAreaFor(m => m.Company.About, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.About)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Facebook)
+                    @Html.TextAreaFor(m => m.Company.Facebook, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Facebook)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Twitter)
+                    @Html.TextAreaFor(m => m.Company.Twitter, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Twitter)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Instagram)
+                    @Html.TextAreaFor(m => m.Company.Instagram, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Instagram)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Company.Linkedin)
+                    @Html.TextAreaFor(m => m.Company.Linkedin, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Company.Linkedin)
+                </div>
+
+                @Html.HiddenFor(m => m.Company.id)
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Yadda saxla" />
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->

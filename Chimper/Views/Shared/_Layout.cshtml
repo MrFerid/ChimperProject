@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chimper &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    <div class="site-wrap">
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <div class="border-bottom top-bar py-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            <span class="mr-3"><strong>Phone:</strong> <a href="tel://#">+1 292 3293 4238</a></span>
+                            <span><strong>Email:</strong> <a href="#"><span class="__cf_email__" data-cfemail="d2bbbcb4bd92abbda7a0b6bdbfb3bbbcfcb1bdbf">[email&#160;protected]</span></a></span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-media">
+                            <li><a href="#" class="p-2"><span class="icon-facebook"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-linkedin"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="site-navbar py-4 bg-white" role="banner">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-11 col-xl-2">
+                        <h1 class="mb-0 site-logo"><a href="index-2.html" class="text-black h2 mb-0">Chimper</a></h1>
+                    </div>
+                    <div class="col-12 col-md-10 d-none d-xl-block">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li class="active"><a href="@Url.Action("Index","Home")">Home</a></li>
+                                <li><a href="@Url.Action("Work","Home")">Work</a></li>
+                                <li class="has-children">
+                                    <a href="@Url.Action("Index","Services")">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="@Url.Action("Index","Services")">Web Applications</a></li>
+                                        <li><a href="@Url.Action("Index","Services")">WordPress Dev</a></li>
+                                        <li><a href="@Url.Action("Index","Services")">Mobile Applications</a></li>
+                                        <li><a href="@Url.Action("Index","Services")">eCommerce</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="@Url.Action("About","Home")">About</a></li>
+                                <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
+                                <li><a href="@Url.Action("Index","Contact")">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+                </div>
+            </div>
+    </header>
+
+
+    @RenderBody()
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h2 class="footer-heading mb-4">About Us</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                        </div>
+                        <div class="col-md-3 ml-auto">
+                            <h2 class="footer-heading mb-4">Features</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 class="footer-heading mb-4">Follow Us</h2>
+                            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+                    <form action="#" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-5">
+                        <p>
+
+                            Copyright &copy;
+                            <script data-cfasync="false" src="~/Scripts/email-decode.min.js"></script>
+                            <script type="d85e422c5bc82e36769a4f69-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/js")
+    
+    <script type="d85e422c5bc82e36769a4f69-text/javascript">
+        var typed = new Typed('.typed-words', {
+        strings: ["Web Apps"," WordPress"," Mobile Apps"],
+        typeSpeed: 80,
+        backSpeed: 80,
+        backDelay: 4000,
+        startDelay: 1000,
+        loop: true,
+        showCursor: true
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="d85e422c5bc82e36769a4f69-text/javascript"></script>
+    <script type="d85e422c5bc82e36769a4f69-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+</body>
+
+</html>
